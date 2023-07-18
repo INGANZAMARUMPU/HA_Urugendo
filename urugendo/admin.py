@@ -5,6 +5,5 @@ from .models import *
 class UrugendoAdmin(admin.ModelAdmin):
     list_display = "kuva", "gushika", "date"
 
-
 admin.site.register(Ingenzi)
 admin.site.register(Itike)
