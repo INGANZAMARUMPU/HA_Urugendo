@@ -3,15 +3,15 @@ from .models import *
 
 class IngenziSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Ingenzi
+        model = Ingenzi
         fields = "__all__"
    
 class UrugendoSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Urugendo
+        model = Urugendo
         fields = "__all__"
     
 class ItikeSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Itike
+        model = Itike
         fields = "__all__"
