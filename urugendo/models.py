@@ -9,6 +9,9 @@ class Ingenzi(models.Model):
     class Meta:
         verbose_name_plural = "Ingenzi"
 
+    def __str__(self) -> str:
+        return f"{self.izina} {self.telephone}"
+
 class Urugendo(models.Model):
     id = models.BigAutoField(primary_key=True)
     kuva = models.CharField(max_length=16)

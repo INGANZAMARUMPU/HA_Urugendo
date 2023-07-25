@@ -10,4 +10,5 @@ router.register("itike", ItikeViewset)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]
