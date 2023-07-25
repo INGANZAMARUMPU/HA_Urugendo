@@ -15,3 +15,7 @@ class ItikeViewset(viewsets.ModelViewSet):
     queryset = Itike.objects.all()
     serializer_class = ItikeSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(uwayimuhaye=self.request.user)
+        return serializer
+

@@ -15,4 +15,5 @@ class ItikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Itike
         fields = "__all__"
-        read_only_fields = "uwayimuhaye", 
+        read_only_fields = "uwayimuhaye",
+        depth = 1
