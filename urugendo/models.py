@@ -30,7 +30,7 @@ class Itike(models.Model):
     ingenzi = models.ForeignKey(Ingenzi, on_delete=models.PROTECT)
     urugendo = models.ForeignKey(Urugendo, null=True, on_delete=models.SET_NULL)
     place = models.SmallIntegerField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
     uwayimuhaye = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
