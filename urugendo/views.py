@@ -11,10 +11,12 @@ class IngenziViewset(viewsets.ModelViewSet):
 
 class UrugendoViewset(viewsets.ModelViewSet):
     queryset = Urugendo.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly, #IsAdminUser
     serializer_class = UrugendoSerializer
 
 class ItikeViewset(viewsets.ModelViewSet):
     queryset = Itike.objects.all()
+    permission_classes = IsAuthenticatedOrReadOnly,
     serializer_class = ItikeSerializer
 
     def perform_create(self, serializer):
