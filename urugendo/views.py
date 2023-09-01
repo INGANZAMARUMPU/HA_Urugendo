@@ -10,9 +10,15 @@ class CustomTokenObtainPairView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer
 
 class IngenziViewset(viewsets.ModelViewSet):
-    queryset = Ingenzi.objects.all()
+    queryset = Ingenzi.objects.filter(is_delete=False)
     permission_classes = IsAuthenticatedOrReadOnly,
     serializer_class = IngenziSerializer
+
+    def destroy(self, request, pk):
+        igihanaguwe:Ingenzi = self.get_object()
+        igihanaguwe.is_delete = True
+        igihanaguwe.save()
+        return Response({"inyushu": "vyahanaguwe neza"}, 204)
 
 class UrugendoViewset(viewsets.ModelViewSet):
     queryset = Urugendo.objects.all()
@@ -37,7 +43,7 @@ class UserViewset(viewsets.ModelViewSet):
         return Response(serializer.data, 201)
 
 class ItikeViewset(viewsets.ModelViewSet):
-    queryset = Itike.objects.all()
+    queryset = Itike.objects.filter(ingenzi__is_delete=False)
     permission_classes = IsAuthenticatedOrReadOnly,
     serializer_class = ItikeSerializer
 

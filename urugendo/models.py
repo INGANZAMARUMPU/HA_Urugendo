@@ -5,6 +5,7 @@ class Ingenzi(models.Model):
     id = models.BigAutoField(primary_key=True)
     izina = models.CharField(max_length=64)
     telephone = models.CharField(max_length=16)
+    is_delete = models.BooleanField(default=False)
 
     class Meta:
         verbose_name_plural = "Ingenzi"
@@ -27,7 +28,7 @@ class Urugendo(models.Model):
 
 class Itike(models.Model):
     id = models.BigAutoField(primary_key=True)
-    ingenzi = models.ForeignKey(Ingenzi, on_delete=models.PROTECT)
+    ingenzi = models.ForeignKey(Ingenzi, on_delete=models.CASCADE)
     urugendo = models.ForeignKey(Urugendo, null=True, on_delete=models.SET_NULL)
     place = models.SmallIntegerField()
     date = models.DateTimeField()

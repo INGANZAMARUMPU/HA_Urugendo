@@ -14,7 +14,7 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 class IngenziSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingenzi
-        fields = "__all__"
+        exclude = "is_delete",
    
 class UrugendoSerializer(serializers.ModelSerializer):
     class Meta:
