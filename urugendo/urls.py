@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 router.register("ingenzi", IngenziViewset)
 router.register("urugendo", UrugendoViewset)
 router.register("itike", ItikeViewset)
+router.register("users", UserViewset)
 
 urlpatterns = [
     path('', include(router.urls)),

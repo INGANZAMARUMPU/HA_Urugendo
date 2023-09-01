@@ -32,3 +32,13 @@ class ItikeSerializer(serializers.ModelSerializer):
         model = Itike
         fields = "__all__"
         read_only_fields = "uwayimuhaye",
+
+
+class UserSerializer(serializers.ModelSerializer):
+
+    password = serializers.CharField()
+
+    class Meta:
+        model = User
+        exclude = "groups", "user_permissions", "date_joined", "last_login"
+        read_only_fields = "is_superuser", "is_staff", 'is_active'
